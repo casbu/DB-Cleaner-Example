@@ -1,7 +1,3 @@
-# - python interface (1 - create table, 2 - query blah…)
-# - add attachment
-# - retreive attachment
-
 import pandas as pd
 import re
 import traceback
@@ -106,10 +102,7 @@ def cleanse_data(df):
 
     #regex for canadian post codes, provinces, and cities
     postal_code_pattern = r'(\b\d{5}(-\d{4})?\b|[A-Z]\d[A-Z]\d[A-Z]\d|[A-Z]\d[A-Z]\s?\d[A-Z]\d|[A-Z]\d[A-Z]\s?[A-Z]\d|[A-Z]\d{4}|[A-Z]\d[A-Z]\s?\d[A-Z]\d|[A-Z]\d[A-Z]{2}\d{2})'
-    #
-    #! can't seem to get canadian zip code checking for M1M4 Y3...and it strangely slices VENDOR CITY 'SURREY V3SS39'.
-    #postal_code_pattern = re.compile(r"\d\d\d\d\d, \d\d\d\d\d-\d\d\d\d, [A-Za-z]\d[A-Za-z]\d\s[A-Za-z]\d, [A-Za-z]\d[A-Za-z]\d[A-Za-z]\d, \d[A-Za-z]\d[A-Za-z][A-Za-z]\d", re.IGNORECASE)
-    #
+    
     province_pattern = r'\b(ONTARIO|QUEBEC|ON|ONT|BC|QC)\b'
     city_pattern = r'\b(MONTREAL|PICKERING|KANLOOPS)\b'
 
